@@ -32,11 +32,16 @@ GNU Parallel -https://www.gnu.org/software/parallel/
       url          = {https://doi.org/10.5281/zenodo.1146014}
 }
 
+Trimmomatic - https://github.com/timflutre/trimmomatic
+To prepare data for Sprokka
+
 python2.7 - https://www.python.org/downloads/release/python-2714/
 
 
 ## Your data:
 Your data folder should contain both R1 and R2 fastq(.gz) files per sample.
+***It is assumed that your data has been trimmed using trimmomatic and is in the form: sampleID_P_R1.fastq.gz
+   With the '_P_' representing the paired result from trimmomatic.
 
 ## How to run it:
 python /path/to/SprokkaRun.py </path/to/data_name>
