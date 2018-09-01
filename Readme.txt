@@ -1,5 +1,3 @@
-# Dolapo Ajayi, August 2018 - Contact: dolaajayi@hotmail.com
-
 ### Sprokka ###
 
 
@@ -47,3 +45,6 @@ python /path/to/SprokkaRun.py </path/to/data_name>
 Your results (as per sample) will be kept in the results folder of the main (Sprokka) directory
 i.e. - ~/Sprokka/results/data_name/sample_1/spades/contigs.fasta
      - ~/Sprokka/results/data_name/sample_1/prokka/result.gff
+     
+     
+# Dolapo Ajayi, August 2018 - Contact: dolaajayi@hotmail.com
