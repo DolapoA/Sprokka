@@ -2,12 +2,14 @@
 
 
 # Dolapo Ajayi, August 2018
-# The purpose of this script (and SprokkaRun.py) is to automate the running of SPAdes and Prokka and to adequately organise the results.
+# The purpose of this script (and SprokkaRun.py) is to automate the running of SPAdes, Prokka and Roary and to adequately organise the results.
 
 import sys
 import os
 import glob
 import subprocess
+import shutil
+from shutil import copyfile
 
 # Collect arguments from SprokkaRun.py
 dataPath=sys.argv[1]
@@ -25,6 +27,7 @@ print("Running SPAdes for:  " + strainName)
 
 ## Create directories for each sample ##
 strainDir=os.path.join(resultsPath, strainName)
+roaryPath=os.path.join(resultsPath, "roary")
 
 try:
     os.makedirs(strainDir, 0o777)
@@ -69,6 +72,20 @@ def run_Prokka(spadesDir):
         except:
             print("Prokka has failed for "+strainName)
 
+# Change name of result files into sample-based name
+    os.chdir(prokkaDir)
+    for f in os.listdir(prokkaDir):
+        file=os.path.basename(f)
+        filename, filetype=str(file).split('.')
+        os.rename(f, ".".join([strainName, filetype]))
+
+# Copy .gff files to roary results directory
+    for f in os.listdir(prokkaDir):
+        if '.gff' in f:
+            try:
+                shutil.copyfile(f, os.path.join(roaryPath, f))
+            except:
+                pass
 
 run_Spades()
 run_Prokka(run_Spades())
