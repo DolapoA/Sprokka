@@ -1,11 +1,5 @@
 #!/usr/bin/env python2.7
 
-
-# Dolapo Ajayi, August 2018
-# The purpose of this script (and SprokkaProc.py) is to automate the running of SPAdes, Prokka and Roary and to adequately organise the results.
-
-
-
 import sys
 import os
 import multiprocessing
