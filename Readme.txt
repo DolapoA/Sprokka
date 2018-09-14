@@ -6,7 +6,7 @@ SprokkaRun and SprokkaProc are 2 scripts that form a mini-pipe for processing fa
 
 
 ## Installation:
-Download and store Sprokka somewhere reasonable i.e. in /opt/
+Download and store Sprokka somewhere reasonable i.e. in /home/
 
 Dependencies:
 SPAdes - https://github.com/ablab/spades
